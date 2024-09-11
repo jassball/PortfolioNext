@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Svg } from "../../../public/images/svg/index";
-import behindFigure from "../../../public/images/svg/behindLogoFigure.svg";
+import { Svg } from "@/constants/svg";
 import Image from "next/image";
+import Link from "next/link";
+import { Routes } from "@/constants/routes";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,12 +29,12 @@ export default function Navbar() {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 text-xl flex items-baseline justify-end space-x-4">
-              <a
-                href="#"
+              <Link
                 className="text-black hover:bg-primary-foreground/10 px-3 py-2 rounded-md font-medium"
+                href={Routes.POTATOCOUNTDOWN}
               >
                 Hjem
-              </a>
+              </Link>
               <a
                 href="#"
                 className="text-black hover:bg-primary-foreground/10 px-3 py-2 rounded-md  font-medium"

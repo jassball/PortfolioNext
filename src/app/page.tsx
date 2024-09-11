@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Navbar from "@/components/ui/navbar";
-import { Svg } from "../../public/images/svg/index";
+import { Svg } from "../constants/svg";
 
 export default function Home() {
   return (
