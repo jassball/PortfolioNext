@@ -1,4 +1,4 @@
-"use client"; // Important for components to use client-side functionality
+"use client"; 
 
 import Navbar from "@/components/ui/navbar";
 import React from "react";
@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const CLIENT_ID = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 const REDIRECT_URI =
-  "https://portfolio-next-31ts0e030-jassballs-projects.vercel.app/callback"; // Make sure this matches your Spotify developer app
+  "https://portfolio-next-31ts0e030-jassballs-projects.vercel.app/callback"; 
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "code";
 const SCOPE = "user-top-read";
