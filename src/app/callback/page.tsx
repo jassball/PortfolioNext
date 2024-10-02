@@ -7,7 +7,8 @@ import { Suspense } from "react";
 
 const CLIENT_ID = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 const CLIENT_SECRET = process.env.SPOTIFY_SECRET;
-const REDIRECT_URI = "http://localhost:3000/callback"; // Same redirect URI you used earlier
+const REDIRECT_URI =
+  "https://portfolio-next-31ts0e030-jassballs-projects.vercel.app/callback"; // Same redirect URI you used earlier
 
 const CallbackPage = () => {
   const searchParams = useSearchParams();

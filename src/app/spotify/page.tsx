@@ -6,7 +6,8 @@ import { Svg } from "@/constants/svg";
 import Image from "next/image";
 
 const CLIENT_ID = process.env.NEXT_PUBLIC_PUBLIC_KEY;
-const REDIRECT_URI = "http://localhost:3000/callback"; // Make sure this matches your Spotify developer app
+const REDIRECT_URI =
+  "https://portfolio-next-31ts0e030-jassballs-projects.vercel.app/callback"; // Make sure this matches your Spotify developer app
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "code";
 const SCOPE = "user-top-read";
