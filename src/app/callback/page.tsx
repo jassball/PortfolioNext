@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
+import { Suspense } from "react";
 
 const CLIENT_ID = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 const CLIENT_SECRET = process.env.SPOTIFY_SECRET;
@@ -52,4 +53,10 @@ const CallbackPage = () => {
   );
 };
 
-export default CallbackPage;
+const CallbackWrapper = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <CallbackPage />
+  </Suspense>
+);
+
+export default CallbackWrapper;
