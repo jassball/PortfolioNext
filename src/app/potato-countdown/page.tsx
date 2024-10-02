@@ -1,4 +1,5 @@
 "use client";
+
 import Navbar from "@/components/ui/navbar";
 import { useState, useEffect } from "react";
 import { Svg } from "@/constants/svg";

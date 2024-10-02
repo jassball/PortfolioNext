@@ -4,4 +4,5 @@ export const Routes = {
   ROADMAP: "/roadmap",
   PROJECTS: "/projects",
   POTATOCOUNTDOWN: "/potato-countdown",
+  SPOTIFY: "/spotify",
 };

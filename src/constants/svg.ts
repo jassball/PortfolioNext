@@ -4,6 +4,7 @@ import bottomLeftFigure from "../../public/images/svg/bottomLeftFigure.svg";
 import middleRightFigure from "../../public/images/svg/middleRightFigure.svg";
 import potato from "../../public/images/svg/potato.svg";
 import match from "../../public/images/svg/match.svg";
+import whiteSpotifySvg from "../../public/images/svg/spotify-white-icon.svg";
 
 export const Svg = {
   behindFigure,
@@ -12,4 +13,5 @@ export const Svg = {
   middleRightFigure,
   potato,
   match,
+  whiteSpotifySvg,
 };

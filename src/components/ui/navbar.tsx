@@ -41,18 +41,18 @@ export default function Navbar() {
               >
                 Om
               </a>
-              <a
-                href="#"
+              <Link
+                href={Routes.ROADMAP}
                 className="text-black hover:bg-primary-foreground/10 px-3 py-2 rounded-md  font-medium"
               >
                 Roadmap
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href={Routes.SPOTIFY}
                 className="text-black hover:bg-primary-foreground/10 px-3 py-2 rounded-md  font-medium"
               >
-                Prosjekter
-              </a>
+                Spotify
+              </Link>
             </div>
           </div>
 
@@ -102,6 +102,8 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* TODO: Fix responsiveness */}
 
       {isOpen && (
         <div className="md:hidden" id="mobile-menu">
