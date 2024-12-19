@@ -5,6 +5,8 @@ import middleRightFigure from "../../public/images/svg/middleRightFigure.svg";
 import potato from "../../public/images/svg/potato.svg";
 import match from "../../public/images/svg/match.svg";
 import whiteSpotifySvg from "../../public/images/svg/spotify-white-icon.svg";
+import { IoIosAlbums } from "react-icons/io";
+
 
 export const Svg = {
   behindFigure,
@@ -14,4 +16,5 @@ export const Svg = {
   potato,
   match,
   whiteSpotifySvg,
+  IoIosAlbums,
 };

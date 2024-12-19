@@ -1,7 +1,9 @@
 "use client";
 
 import Navbar from "@/components/ui/navbar";
+import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Svg } from "@/constants/svg";
 
 const fetchTopItems = async (
   accessToken: string,
@@ -18,6 +20,7 @@ const fetchTopItems = async (
   );
 
   const data = await response.json();
+  console.log(`Top ${type} response:`, data); // Print the response for debugging
   return data;
 };
 
@@ -48,11 +51,13 @@ const TopArtistsAndTracksPage = () => {
     if (accessToken) {
       // Fetch top 5 artists
       fetchTopItems(accessToken, "artists", 5).then((data) => {
+        console.log("Top Artists Data:", data); // Log the fetched top artists data
         setTopArtists(data.items);
       });
 
       // Fetch top 5 tracks
       fetchTopItems(accessToken, "tracks", 5).then((data) => {
+        console.log("Top Tracks Data:", data); // Log the fetched top tracks data
         setTopTracks(data.items);
         setLoading(false);
       });
@@ -70,11 +75,11 @@ const TopArtistsAndTracksPage = () => {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <div>
+          <div className="flex ">
             <h2>Top 5 Artists</h2>
-            <ul>
+            <div>
               {topArtists.map((artist) => (
-                <li key={artist.id}>
+                <div key={artist.id}>
                   <p>{artist.name}</p>
                   <img
                     src={artist.images[0]?.url}
@@ -83,28 +88,37 @@ const TopArtistsAndTracksPage = () => {
                   />
                   <p>Genres: {artist.genres.join(", ")}</p>
                   <p>Followers: {artist.followers.total}</p>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
 
             <h2>Top 5 Tracks</h2>
-            <ul>
+            <div className="bg-gradient-to-b w-[400px] from-stone-900 to-neutral-800 text-white flex flex-col p-5">
               {topTracks.map((track) => (
-                <li key={track.id}>
-                  <p>
-                    {track.name} by{" "}
-                    {track.artists.map((artist) => artist.name).join(", ")}
-                  </p>
+                <div
+                  className="flex flex-col items-center space-y-2"
+                  key={track.id}
+                >
                   <img
                     src={track.album.images[0]?.url}
                     alt={track.name}
-                    width={100}
+                    className="object-cover"
                   />
-                  <p>Album: {track.album.name}</p>
-                  <p>Popularity: {track.popularity}</p>
-                </li>
+                  <div className="flex flex-col items-start justify-start">
+                    <div className="flex items-center justify-between">
+                      <Svg.IoIosAlbums />
+                      <p>{track.name} by </p>
+                    </div>
+                    <p>
+                      {" "}
+                      {track.artists.map((artist) => artist.name).join(", ")}
+                    </p>
+                    <p>Album: {track.album.name}</p>
+                    <p>Popularity: {track.popularity}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         )}
       </div>

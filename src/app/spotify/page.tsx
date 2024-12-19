@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import Navbar from "@/components/ui/navbar";
 import React from "react";
@@ -6,8 +6,7 @@ import { Svg } from "@/constants/svg";
 import Image from "next/image";
 
 const CLIENT_ID = process.env.NEXT_PUBLIC_PUBLIC_KEY;
-const REDIRECT_URI =
-  "https://portfolio-next-31ts0e030-jassballs-projects.vercel.app/callback"; 
+const REDIRECT_URI = "http://localhost:3000/callback";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "code";
 const SCOPE = "user-top-read";
