@@ -1,3 +1,11 @@
+export default function Page() {
+  return (
+    <div>
+      <h1>ANE</h1>
+    </div>
+  );
+}
+
 // "use client";
 
 // import Navbar from "@/components/ui/navbar";
@@ -23,7 +31,7 @@
 
 //       <div className="max-w-7xl mx-auto flex items-center h-full justify-center pt-12">
 //         <div
-//           className="h-[400px] w-[400px] bg-gradient-to-b from-stone-900 to-neutral-800 text-white font-bold 
+//           className="h-[400px] w-[400px] bg-gradient-to-b from-stone-900 to-neutral-800 text-white font-bold
 //         shadow-2xl rounded-sm mx-auto flex items-center flex-col p-6 space-y-24 "
 //         >
 //           <div className="flex flex-col justify-center items-center space-y-2 ">
