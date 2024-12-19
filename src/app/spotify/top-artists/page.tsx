@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from "@/components/ui/navbar";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Svg } from "@/constants/svg";
 
