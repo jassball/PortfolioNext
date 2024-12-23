@@ -9,9 +9,9 @@ export default function Page() {
   // Predefined correct values
 
   const correctValues = {
-    field1: "36,55",
-    field2: "paris",
-    field3: "fireball",
+    field1: ["36,55", "36.55"],
+    field2: ["paris", "PARIS", "Paris"],
+    field3: ["fireball", "Fireball"],
   };
 
   // State to hold user input and validation status
@@ -50,9 +50,9 @@ export default function Page() {
 
     // Validate inputs
     const newErrors = {
-      field1: formValues.field1 !== correctValues.field1,
-      field2: formValues.field2 !== correctValues.field2,
-      field3: formValues.field3 !== correctValues.field3,
+      field1: !correctValues.field1.includes(formValues.field1),
+      field2: !correctValues.field2.includes(formValues.field2),
+      field3: !correctValues.field3.includes(formValues.field3),
     };
 
     setErrors(newErrors);
@@ -68,7 +68,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen ">
-      <h1 className="text-2xl font-bold mb-4">Skriv in svarene</h1>
+      <h1 className="text-2xl font-bold mb-4">Skriv inn svarene</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         {["field1", "field2", "field3"].map((field) => (
           <div key={field}>
@@ -77,12 +77,19 @@ export default function Page() {
               name={field}
               value={formValues[field as keyof typeof formValues]}
               onChange={handleChange}
-              placeholder={`Enter ${field}`}
+              placeholder={
+                field === "field1"
+                  ? "Lars tid"
+                  : field === "field2"
+                  ? "Sang"
+                  : "Fysikk spørsmål"
+              }
               className={`block w-64 px-4 py-2 border-2 rounded-md focus:outline-none ${
                 errors[field as keyof typeof errors]
                   ? "border-red-500"
-                  : formValues[field as keyof typeof formValues] ===
-                    correctValues[field as keyof typeof correctValues]
+                  : correctValues[field as keyof typeof correctValues].includes(
+                      formValues[field as keyof typeof formValues]
+                    )
                   ? "border-green-500"
                   : "border-gray-300"
               }`}
@@ -91,9 +98,9 @@ export default function Page() {
         ))}
         <button
           type="submit"
-          className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          className="px-6 py-2 bg-blue-500 text-white mx-auto rounded-md hover:bg-blue-600"
         >
-          Submit
+          Send inn
         </button>
       </form>
     </div>
